@@ -19,16 +19,27 @@ Peça, com atributos tipo, cor e posição (formada por coluna e linha - ex: “
  * @author unifrsilva
  */
 public class Pecas {
-    private String tipo;
-    private String cor;
-    private String posicao;
     
-    Pecas(String cor, String tipo){
+    String[] letra = {"a","b","c","d","e","f","g","h"};
+    int[] num = {1,2,3,4,5,6,7,8};
+    private String tipo; 
+    private String cor;
+    private String[] posicoes = new String[63];
+    
+    
+    Pecas(String cor, String tipo, String posicao){
         this.tipo = tipo;
-        this.cor = cor;
-        
+        this.cor = cor;    
+        this.posicao = posicao;
     }
-            
+    
+    private void geraPosicoes(String letra,  int num){
+        for(String i: posicoes){
+            i = letra + num;
+        }   
+    }
+    
+    
     public String getTipo() {
         return tipo;
     }
